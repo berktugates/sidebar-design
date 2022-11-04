@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans&family=Roboto:wght@300;400&display=swap');
+
+*
+{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Fira Sans', sans-serif;
+}
+
+body{
+    background-color: #fff;
+}
+
+#side_nav
+{
+    background-color: #0c192c;
+    min-width: 250px;
+    max-width: 250px;
+    transition: all 0.3s;
+}
+
+.content .navbar
+{
+    background-color: #fff!important;
+}
+
+.navbar .container-fluid
+{
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+/* animated font start */
+.brand-text
+{
+    position: relative;
+    color: #252839;
+    -webkit-text-stroke: 03.vw #383d52
+    
+}
+
+.brand-text::before
+{
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    color: #01fe87;
+    -webkit-text-stroke: 0vw #383d52;
+    border-right:2px solid #01fe87;
+    overflow: hidden;
+    animation: animate 6s linear infinite;
+}
+
+@keyframes animate
+{
+    0%,10%,100%
+    {
+        width: 0;
+    }
+    70%,90%
+    {
+        width: 100%;
+    }
+}
+/* animated font ending */
+
+/* Navbar Toggle Buton start */
+.toggle {
+    --width: 50px;
+    --height: calc(var(--width) / 2);
+    --border-radius: calc(var(--height) / 2);
+  
+    display: inline-block;
+    cursor: pointer;
+  }
+  
+  .toggle__input {
+    display: none;
+  }
+  
+  .toggle__fill {
+    position: relative;
+    width: var(--width);
+    height: var(--height);
+    border-radius: var(--border-radius);
+    background: #dddddd;
+    transition: background 0.2s;
+  }
+  
+  .toggle__input:checked ~ .toggle__fill {
+    background: #009578;
+  }
+  
+  .toggle__fill::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: var(--height);
+    width: var(--height);
+    background: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+    border-radius: var(--border-radius);
+    transition: transform 0.2s;
+  }
+  
+  .toggle__input:checked ~ .toggle__fill::after {
+    transform: translateX(var(--height));
+  }
+/* Navbar Toggle Buton ending */
+
+.content
+{
+    min-height: 100vh;
+    width: 100%;
+}
+
+.h-color
+{
+    border: 2px solid #01fe87;
+    border-radius: 10px;
+
+}
+
+.sidebar .active a
+{
+    background-color: #ff2d75; 
+    border-radius: 8px;
+}
+
+.sidebar  .active a:hover
+{
+    color: #0c192c;
+    background-color: #fff;
+    transition: 0.7s;
+}
+
+
+.sidebar li a
+{
+    color: #fff;
+}
+
+.sidebar  .active a:focus
+ {
+    color: #000;
+ }
+
+
+ @media(max-width: 767px)
+ {
+    #side_nav
+    {
+        margin-left: -250px;
+        position: fixed;
+        min-height: 100vh;
+        z-index: 1;
+    }
+
+    #side_nav .active
+    {
+        margin-left: 0px;
+    }
+ }
